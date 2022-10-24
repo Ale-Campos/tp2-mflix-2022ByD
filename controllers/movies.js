@@ -5,7 +5,6 @@ async function getAllMovies(pageSize, page) {
 }
 
 async function getMovie(id) {
-  console.log("CONTROLLER");
   return await movies.getMovie(id);
 }
 

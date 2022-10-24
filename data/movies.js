@@ -16,15 +16,13 @@ async function getAllMovies(pageSize, page) {
 }
 
 async function getMovie(id) {
-  console.log("DATA");
   const connectiondb = await conn.getConnection();
   const movie = await connectiondb
     .db(DATABASE)
     .collection(MOVIES)
     .find({ _id: new ObjectID(`${id}`) })
     .toArray();
-  console.log(id);
-  console.log(movie);
+
   return movie;
 }
 

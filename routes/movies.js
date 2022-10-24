@@ -25,7 +25,7 @@ router.get("/winnerMovies", async (req, res) => {
 });
 
 router.get("/moviesByLanguage", async (req, res) => {
-  const pageSize = req.query.pageSize ? parseInt(req.query.pageSize) : 0;
+  const pageSize = req.query.pageSize ? parseInt(req.query.pageSize) : 0; // ..? si existe ....  : si no 0
   const page = req.query.page ? parseInt(req.query.page) : 0;
   const language = req.query.language;
   res.json(await controller.moviesByLanguage(pageSize, page, language));
